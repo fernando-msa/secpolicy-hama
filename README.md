@@ -1,107 +1,152 @@
-# SecPolicy HAMA
+<div align="center">
 
-Gestão mensal de políticas de segurança da informação para o HAMA.  
-Baseado em ISO/IEC 27001 · Next.js 14 + TypeScript · Deploy no Vercel.
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=008080&center=true&vCenter=true&width=600&lines=SecPolicy+HAMA+—+Gestão+de+Segurança+da+Informação" alt="Typing SVG" />
+
+# 🛡️ SecPolicy HAMA
+
+**Gestão mensal de políticas de segurança da informação para instituições de saúde.**  
+Baseado em **ISO/IEC 27001** · Next.js 14 + TypeScript · Deploy no Vercel.
+
+[![Deploy](https://img.shields.io/badge/Deploy-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
+[![Next.js](https://img.shields.io/badge/Next.js_14-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![ISO 27001](https://img.shields.io/badge/ISO%2FIEC-27001-red?style=for-the-badge&logo=shield&logoColor=white)](https://www.iso.org/isoiec-27001-information-security.html)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+</div>
 
 ---
 
-## Funcionalidades
+## 📋 Sobre o Projeto
 
-- Checklist mensal com 5 categorias e 22 itens
-- Criticidade por item (Alta / Média / Baixa)
-- Pontuação de conformidade em tempo real
-- Geração de relatório PDF completo
-- Histórico de todos os meses preenchidos
-- Fluxo de aprovação: Analista → Gestão
-- Auto-save de rascunho no navegador
+O **SecPolicy HAMA** é uma aplicação web desenvolvida para a **HAMA (Hospital e Maternidade de Aracaju)** com o objetivo de digitalizar e padronizar o processo de conformidade com políticas de segurança da informação.
+
+A ferramenta substitui planilhas manuais por um fluxo estruturado: o analista preenche o checklist mensal, a pontuação de conformidade é calculada em tempo real e um relatório PDF é gerado automaticamente para aprovação da gestão.
+
+> Desenvolvido com base nos controles da **ISO/IEC 27001**, adaptado à realidade de infraestrutura de saúde pública.
 
 ---
 
-## Setup local
+## ✨ Funcionalidades
+
+| Funcionalidade | Descrição |
+|---|---|
+| 📋 **Checklist mensal** | 22 itens organizados em 5 categorias |
+| 🎯 **Criticidade por item** | Alta / Média / Baixa |
+| 📊 **Pontuação em tempo real** | Índice de conformidade calculado automaticamente |
+| 📄 **Relatório PDF** | Gerado no cliente com jsPDF, sem servidor |
+| 🗂️ **Histórico de meses** | Registro de todos os checklists preenchidos |
+| ✅ **Fluxo de aprovação** | Analista → Gestão |
+| 💾 **Auto-save** | Rascunho salvo automaticamente no navegador |
+
+---
+
+## 🛠️ Stack Tecnológica
+
+| Tecnologia | Uso |
+|---|---|
+| **Next.js 14** | Framework React com App Router |
+| **TypeScript** | Tipagem estática |
+| **Tailwind CSS** | Estilização utilitária |
+| **jsPDF** | Geração de relatório PDF no cliente |
+| **localStorage** | Persistência local sem banco de dados |
+| **DM Sans / DM Mono** | Tipografia |
+
+---
+
+## 🚀 Setup Local
 
 ```bash
-# 1. Clonar ou criar o projeto
-npx create-next-app@14 secpolicy-hama --typescript --tailwind --app --no-src-dir --import-alias "@/*"
+# 1. Clonar o repositório
+git clone https://github.com/fernando-msa/secpolicy-hama.git
 cd secpolicy-hama
 
-# 2. Substituir os arquivos gerados pelos arquivos deste projeto
-# (copie: app/, data/, lib/, globals.css)
+# 2. Instalar dependências
+npm install
 
-# 3. Instalar dependência extra
-npm install jspdf
-
-# 4. Rodar localmente
+# 3. Rodar localmente
 npm run dev
 ```
 
-Abra http://localhost:3000
+Acesse **http://localhost:3000**
+
+> Não há variáveis de ambiente necessárias para a versão básica.
 
 ---
 
-## Deploy no Vercel
+## ☁️ Deploy no Vercel
+
+**Via CLI:**
 
 ```bash
-# 1. Instalar Vercel CLI (se não tiver)
 npm i -g vercel
-
-# 2. Fazer login
 vercel login
-
-# 3. Deploy
 vercel --prod
 ```
 
-Ou conecte o repositório GitHub diretamente no painel do Vercel.  
-Não há variáveis de ambiente necessárias para a versão básica.
+**Via painel:** conecte o repositório GitHub diretamente em [vercel.com/new](https://vercel.com/new) e clique em Deploy — sem configuração adicional.
 
 ---
 
-## Estrutura
+## 📁 Estrutura do Projeto
 
 ```
 secpolicy-hama/
 ├── app/
-│   ├── layout.tsx           # Layout raiz com fontes
-│   ├── page.tsx             # Dashboard / histórico
-│   ├── globals.css          # Design system (CSS variables)
+│   ├── layout.tsx            # Layout raiz com fontes
+│   ├── page.tsx              # Dashboard / histórico
+│   ├── globals.css           # Design system (CSS variables)
 │   └── checklist/
 │       └── [id]/
-│           └── page.tsx     # Preenchimento e visualização
+│           └── page.tsx      # Preenchimento e visualização
 ├── data/
-│   └── politicas.json       # Itens do checklist (editável)
+│   └── politicas.json        # Itens do checklist (editável)
 └── lib/
-    ├── types.ts             # Tipos TypeScript
-    ├── storage.ts           # localStorage + cálculos
-    └── pdf.ts               # Geração de PDF com jsPDF
+    ├── types.ts              # Tipos TypeScript
+    ├── storage.ts            # localStorage + cálculos
+    └── pdf.ts                # Geração de PDF com jsPDF
 ```
 
 ---
 
-## Personalizar itens
+## ⚙️ Personalizar Itens do Checklist
 
-Edite `data/politicas.json` para adicionar, remover ou alterar categorias e itens.  
-Cada item tem:
-- `id` — identificador único (não altere após ter dados salvos)
-- `texto` — descrição do item
-- `criticidade` — `"Alta"` | `"Média"` | `"Baixa"`
+Edite `data/politicas.json` para adicionar, remover ou alterar categorias e itens.
+
+Cada item contém:
+
+```json
+{
+  "id": "identificador-unico",
+  "texto": "Descrição do item de conformidade",
+  "criticidade": "Alta" | "Média" | "Baixa"
+}
+```
+
+> ⚠️ Não altere o `id` de um item após já ter dados salvos — isso quebrará o histórico existente.
 
 ---
 
-## Próximos passos sugeridos
+## 🗺️ Próximos Passos
 
-- [ ] Integração com Resend para envio de e-mail automático após envio
-- [ ] Página `/gestao` para a chefia aprovar/solicitar ajustes
-- [ ] Export para Excel além de PDF
-- [ ] Notificação no dia 1° do mês via e-mail
+- [ ] Integração com **Resend** para envio de e-mail automático após submissão
+- [ ] Página `/gestao` para aprovação ou solicitação de ajustes pela chefia
+- [ ] Export para **Excel** além de PDF
+- [ ] Notificação automática no dia 1° de cada mês
 
 ---
 
-## Tecnologias
+## 📄 Licença
 
-| Lib | Uso |
-|-----|-----|
-| Next.js 14 | Framework React |
-| TypeScript | Tipagem |
-| jsPDF | Geração de PDF no cliente |
-| localStorage | Persistência sem banco |
-| DM Sans / DM Mono | Tipografia |
+Distribuído sob a licença **MIT**. Veja [`LICENSE`](./LICENSE) para mais detalhes.
+
+---
+
+<div align="center">
+
+Desenvolvido por [Fernando S. De Santana Júnior](https://github.com/fernando-msa)  
+Analista de Infraestrutura · HAMA · Aracaju/SE
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/fernando-junior-1a74ab29b/)
+
+</div>
