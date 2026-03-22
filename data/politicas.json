@@ -1,0 +1,64 @@
+[
+  {
+    "id": "infra",
+    "label": "Infraestrutura e servidores",
+    "descricao": "Servidores, backups, rede e equipamentos físicos",
+    "cor": "blue",
+    "items": [
+      { "id": "infra_1", "texto": "Backups Bacula verificados e testados mensalmente", "criticidade": "Alta" },
+      { "id": "infra_2", "texto": "Servidores com patches de segurança em dia", "criticidade": "Alta" },
+      { "id": "infra_3", "texto": "Firewall configurado e com regras documentadas", "criticidade": "Alta" },
+      { "id": "infra_4", "texto": "Inventário de hardware atualizado no GLPI", "criticidade": "Média" },
+      { "id": "infra_5", "texto": "Switches e roteadores com firmware atualizado", "criticidade": "Média" }
+    ]
+  },
+  {
+    "id": "acesso",
+    "label": "Controle de acesso",
+    "descricao": "Senhas, privilégios e autenticação de usuários",
+    "cor": "purple",
+    "items": [
+      { "id": "acesso_1", "texto": "Política de senhas fortes implementada", "criticidade": "Alta" },
+      { "id": "acesso_2", "texto": "Acessos de ex-funcionários revogados imediatamente", "criticidade": "Alta" },
+      { "id": "acesso_3", "texto": "Princípio do menor privilégio aplicado", "criticidade": "Alta" },
+      { "id": "acesso_4", "texto": "Autenticação em dois fatores em sistemas críticos", "criticidade": "Média" },
+      { "id": "acesso_5", "texto": "Revisão trimestral de permissões de usuários realizada", "criticidade": "Média" }
+    ]
+  },
+  {
+    "id": "chamados",
+    "label": "Gestão de chamados",
+    "descricao": "GLPI, rastreabilidade e SLA de atendimento",
+    "cor": "teal",
+    "items": [
+      { "id": "chamados_1", "texto": "Todo atendimento registrado no GLPI", "criticidade": "Média" },
+      { "id": "chamados_2", "texto": "SLA definido e monitorado por categoria de chamado", "criticidade": "Média" },
+      { "id": "chamados_3", "texto": "Chamados críticos com escalada documentada", "criticidade": "Alta" },
+      { "id": "chamados_4", "texto": "Relatórios mensais de chamados gerados e arquivados", "criticidade": "Baixa" }
+    ]
+  },
+  {
+    "id": "dados",
+    "label": "Dados de saúde e LGPD",
+    "descricao": "Proteção de dados sensíveis de pacientes",
+    "cor": "red",
+    "items": [
+      { "id": "dados_1", "texto": "Dados de pacientes acessíveis apenas por pessoal autorizado", "criticidade": "Alta" },
+      { "id": "dados_2", "texto": "Política de descarte seguro de mídias com dados sensíveis", "criticidade": "Alta" },
+      { "id": "dados_3", "texto": "Termo de responsabilidade assinado por usuários do sistema", "criticidade": "Média" },
+      { "id": "dados_4", "texto": "Logs de acesso aos sistemas clínicos retidos por 6 meses", "criticidade": "Média" }
+    ]
+  },
+  {
+    "id": "rotinas",
+    "label": "Rotinas e resposta a incidentes",
+    "descricao": "Planos, treinamentos e revisão de procedimentos",
+    "cor": "amber",
+    "items": [
+      { "id": "rotinas_1", "texto": "Plano de resposta a incidentes documentado", "criticidade": "Alta" },
+      { "id": "rotinas_2", "texto": "Contatos de emergência (TI, jurídico, gestão) atualizados", "criticidade": "Média" },
+      { "id": "rotinas_3", "texto": "Treinamento básico de segurança para funcionários realizado", "criticidade": "Média" },
+      { "id": "rotinas_4", "texto": "Revisão trimestral desta política de segurança agendada", "criticidade": "Baixa" }
+    ]
+  }
+]
