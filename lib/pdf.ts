@@ -129,11 +129,13 @@ export async function gerarPDF(
       const resposta = registro.respostas.find(r => r.itemId === item.id)
       const conforme = resposta?.conforme ?? false
 
-      doc.setFillColor(conforme ? 240, 253, 244 : 254, 242, 242)
+      const fillBg: [number,number,number] = conforme ? [240, 253, 244] : [254, 242, 242]
+      doc.setFillColor(...fillBg)
       doc.roundedRect(14, y, W - 28, 7, 1, 1, 'F')
 
       // Ícone
-      doc.setFillColor(conforme ? 22, 163, 74 : 239, 68, 68)
+      const fillIcon: [number,number,number] = conforme ? [22, 163, 74] : [239, 68, 68]
+      doc.setFillColor(...fillIcon)
       doc.circle(18.5, y + 3.5, 1.5, 'F')
 
       // Criticidade badge
@@ -156,7 +158,8 @@ export async function gerarPDF(
       doc.setFont('helvetica', 'bold')
       doc.text(item.criticidade, cx + cw / 2, y + 4.5, { align: 'center' })
 
-      doc.setTextColor(conforme ? 21, 128, 61 : 153, 27, 27)
+      const txtCor: [number,number,number] = conforme ? [21, 128, 61] : [153, 27, 27]
+      doc.setTextColor(...txtCor)
       doc.setFontSize(7.5)
       doc.setFont('helvetica', 'normal')
       const maxW = W - 28 - 10 - cw - 2
