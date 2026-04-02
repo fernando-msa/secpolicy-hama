@@ -38,6 +38,9 @@ A ferramenta substitui planilhas manuais por um fluxo estruturado: o analista pr
 | 🗂️ **Histórico de meses** | Registro de todos os checklists preenchidos |
 | ✅ **Fluxo de aprovação** | Analista → Gestão |
 | 💾 **Auto-save** | Rascunho salvo automaticamente no navegador |
+| ☁️ **Firestore** | Persistência em nuvem por usuário autenticado |
+| 📄 **Versionamento** | Cada edição cria uma nova versão da política |
+| 📊 **Auditoria** | Log de criação/alteração com status e versão |
 
 ---
 
@@ -49,7 +52,8 @@ A ferramenta substitui planilhas manuais por um fluxo estruturado: o analista pr
 | **TypeScript** | Tipagem estática |
 | **Tailwind CSS** | Estilização utilitária |
 | **jsPDF** | Geração de relatório PDF no cliente |
-| **localStorage** | Persistência local sem banco de dados |
+| **Firebase Auth** | Identificação do usuário (anônimo) |
+| **Cloud Firestore** | Persistência, versionamento e trilha de auditoria |
 | **DM Sans / DM Mono** | Tipografia |
 
 ---
@@ -70,7 +74,21 @@ npm run dev
 
 Acesse **http://localhost:3000**
 
-> Não há variáveis de ambiente necessárias para a versão básica.
+> Configure as variáveis de ambiente do Firebase antes de rodar localmente:
+
+```bash
+NEXT_PUBLIC_FIREBASE_API_KEY=
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
+NEXT_PUBLIC_FIREBASE_APP_ID=
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=
+```
+
+> Caso as variáveis não sejam informadas, o projeto usa o fallback definido em `lib/firebase.ts` para o projeto `secpolicy-hama`.
+
+Para backend com conta de serviço (Admin SDK), há um template em `lib/firebase-admin.ts`.
 
 ---
 
