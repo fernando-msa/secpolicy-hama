@@ -23,6 +23,9 @@ export interface RespostaItem {
 
 export interface RegistroChecklist {
   id: string
+  policyId: string
+  uid: string
+  version: number
   mes: string
   ano: number
   dataPreenchimento: string
@@ -30,4 +33,17 @@ export interface RegistroChecklist {
   respostas: RespostaItem[]
   status: 'rascunho' | 'enviado' | 'aprovado' | 'ajuste_solicitado'
   observacaoGestao?: string
+  alteradoPor?: string
+}
+
+export interface AuditLog {
+  id: string
+  uid: string
+  policyId: string
+  registroId: string
+  action: 'create' | 'update'
+  fromVersion: number | null
+  toVersion: number
+  status: RegistroChecklist['status']
+  at: string
 }
