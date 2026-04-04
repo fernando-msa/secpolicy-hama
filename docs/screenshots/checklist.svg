@@ -1,0 +1,17 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='720' viewBox='0 0 1200 720'>
+  <rect width='1200' height='720' fill='#0b1120'/>
+  <rect x='40' y='40' width='1120' height='640' rx='16' fill='#111827' stroke='rgba(255,255,255,.12)'/>
+  <text x='80' y='92' fill='#f1f5f9' font-family='Arial' font-size='30'>Checklist mensal</text>
+  <rect x='80' y='130' width='1040' height='70' rx='10' fill='#1a2336'/>
+  <text x='108' y='173' fill='#94a3b8' font-family='Arial' font-size='22'>Identificação · Analista · Mês · Ano</text>
+  <rect x='80' y='230' width='1040' height='88' rx='10' fill='#1a2336'/>
+  <text x='108' y='280' fill='#f1f5f9' font-family='Arial' font-size='24'>Governança e Organização • 72%</text>
+  <rect x='80' y='336' width='1040' height='88' rx='10' fill='#1a2336'/>
+  <text x='108' y='386' fill='#f1f5f9' font-family='Arial' font-size='24'>Controles Técnicos • 65%</text>
+  <rect x='80' y='442' width='1040' height='88' rx='10' fill='#1a2336'/>
+  <text x='108' y='492' fill='#f1f5f9' font-family='Arial' font-size='24'>Continuidade e Resposta • 81%</text>
+  <rect x='786' y='580' width='160' height='48' rx='10' fill='#1a2336' stroke='rgba(255,255,255,.22)'/>
+  <text x='814' y='611' fill='#f1f5f9' font-family='Arial' font-size='18'>Rascunho</text>
+  <rect x='962' y='580' width='160' height='48' rx='10' fill='#3b82f6'/>
+  <text x='984' y='611' fill='white' font-family='Arial' font-size='18'>Enviar</text>
+</svg>
