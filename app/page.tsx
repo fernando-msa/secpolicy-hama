@@ -77,11 +77,19 @@ export default function Home() {
         </div>
 
         <div style={{ display: 'flex', gap: 10, marginTop: 22, flexWrap: 'wrap' }}>
-          <Link href="/checklist/novo">
-            <button className="btn-primary btn" style={{ padding: '11px 16px' }}>Iniciar checklist do mês</button>
+          <Link
+            href="/checklist/novo"
+            className="btn-primary btn"
+            style={{ padding: '11px 16px', textDecoration: 'none' }}
+          >
+            Iniciar checklist do mês
           </Link>
-          <a href="#demo-fluxo" style={{ textDecoration: 'none' }}>
-            <button className="btn" style={{ padding: '11px 16px' }}>Ver demo do fluxo</button>
+          <a
+            href="#demo-fluxo"
+            className="btn"
+            style={{ padding: '11px 16px', textDecoration: 'none' }}
+          >
+            Ver demo do fluxo
           </a>
         </div>
       </section>
