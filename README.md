@@ -44,6 +44,27 @@ A ferramenta substitui planilhas manuais por um fluxo estruturado: o analista pr
 
 ---
 
+## 🖼️ Demo Visual (Landing + Fluxo)
+
+A home agora funciona também como **landing/demo** do produto, com destaque para:
+
+- proposta de valor do fluxo mínimo;
+- cards de demonstração (Checklist → Score → PDF);
+- KPI rápido de histórico e status atual.
+
+### Screenshots
+
+#### Checklist mensal
+![Checklist mensal](./docs/screenshots/checklist.svg)
+
+#### Score de conformidade
+![Score de conformidade](./docs/screenshots/score.svg)
+
+#### Relatório PDF
+![Prévia de PDF](./docs/screenshots/pdf.svg)
+
+---
+
 ## 🛠️ Stack Tecnológica
 
 | Tecnologia | Uso |
@@ -147,10 +168,23 @@ Cada item contém:
 
 ## 🗺️ Próximos Passos
 
+Os próximos passos já foram estruturados para abertura de issues em `docs/roadmap-issues.md` e via template `.github/ISSUE_TEMPLATE/proximos-passos.md`.
+
 - [ ] Integração com **Resend** para envio de e-mail automático após submissão
 - [ ] Página `/gestao` para aprovação ou solicitação de ajustes pela chefia
 - [ ] Export para **Excel** além de PDF
 - [ ] Notificação automática no dia 1° de cada mês
+
+---
+
+## 🚢 Release do fluxo mínimo
+
+Quando o fluxo mínimo estiver fechado (checklist → score → PDF + aprovação inicial), publique um release seguindo:
+
+1. Atualizar `README` e screenshots da versão estável.
+2. Garantir que as issues de escopo mínimo estejam fechadas.
+3. Criar tag semântica (ex.: `v0.1.0`) e publicar release no GitHub.
+4. Anexar notas com: melhorias visuais, limitações atuais e próximos incrementos.
 
 ---
 

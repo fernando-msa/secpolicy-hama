@@ -1,0 +1,14 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='720' viewBox='0 0 1200 720'>
+  <rect width='1200' height='720' fill='#0b1120'/>
+  <rect x='40' y='40' width='1120' height='640' rx='16' fill='#111827' stroke='rgba(255,255,255,.12)'/>
+  <text x='80' y='96' fill='#f1f5f9' font-family='Arial' font-size='30'>Score de conformidade</text>
+  <circle cx='280' cy='360' r='150' fill='none' stroke='#1a2336' stroke-width='26'/>
+  <circle cx='280' cy='360' r='150' fill='none' stroke='#22c55e' stroke-width='26' stroke-dasharray='640 942' transform='rotate(-90 280 360)'/>
+  <text x='212' y='377' fill='#22c55e' font-family='Arial' font-size='64' font-weight='bold'>68%</text>
+  <rect x='500' y='200' width='580' height='120' rx='12' fill='#1a2336'/>
+  <text x='528' y='250' fill='#94a3b8' font-family='Arial' font-size='24'>Concluídos</text>
+  <text x='528' y='292' fill='#f1f5f9' font-family='Arial' font-size='42'>15 / 22</text>
+  <rect x='500' y='346' width='580' height='120' rx='12' fill='#1a2336'/>
+  <text x='528' y='396' fill='#94a3b8' font-family='Arial' font-size='24'>Críticos pendentes</text>
+  <text x='528' y='438' fill='#ef4444' font-family='Arial' font-size='42'>2 itens</text>
+</svg>
