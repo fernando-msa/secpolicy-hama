@@ -1,10 +1,8 @@
-<div align="center">
-
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=008080&center=true&vCenter=true&width=600&lines=SecPolicy+HAMA+—+Gestão+de+Segurança+da+Informação" alt="Typing SVG" />
-
 # 🛡️ SecPolicy HAMA
 
-**Gestão mensal de políticas de segurança da informação para instituições de saúde.**  
+![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=008080&center=true&vCenter=true&width=600&lines=SecPolicy+HAMA+—+Gestão+de+Segurança+da+Informação)
+
+**Plataforma para gestão mensal de políticas de segurança da informação em instituições de saúde.**  
 Baseado em **ISO/IEC 27001** · Next.js 14 + TypeScript · Deploy no Vercel.
 
 [![Deploy](https://img.shields.io/badge/Deploy-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
@@ -12,12 +10,11 @@ Baseado em **ISO/IEC 27001** · Next.js 14 + TypeScript · Deploy no Vercel.
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![ISO 27001](https://img.shields.io/badge/ISO%2FIEC-27001-red?style=for-the-badge&logo=shield&logoColor=white)](https://www.iso.org/isoiec-27001-information-security.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-
-</div>
+[![Solicitar Demo](https://img.shields.io/badge/Solicitar-Demo-success?style=for-the-badge)](https://github.com/fernando-msa/secpolicy-hama/issues/new?template=solicitar-demo.md&title=%5BDemo%5D%20SecPolicy%20para%20%5BNome%20da%20institui%C3%A7%C3%A3o%5D)
 
 ---
 
-## 📋 Sobre o Projeto
+## 📋 Sobre o Produto
 
 O **SecPolicy HAMA** é uma aplicação web desenvolvida para a **HAMA (Hospital e Maternidade de Aracaju)** com o objetivo de digitalizar e padronizar o processo de conformidade com políticas de segurança da informação.
 
@@ -27,10 +24,42 @@ A ferramenta substitui planilhas manuais por um fluxo estruturado: o analista pr
 
 ---
 
+## 💼 Oferta Comercial
+
+### Público-alvo
+
+- hospitais, maternidades e clínicas com exigência de rastreabilidade;
+- equipes de infraestrutura/TI que hoje operam com planilhas e e-mails;
+- gestão que precisa de visibilidade mensal de conformidade.
+
+### Modelo de contratação
+
+- **Licença da plataforma** (uso mensal);
+- **Implantação assistida** (opcional);
+- **Customização de checklist/fluxo** (opcional).
+
+### Planos sugeridos
+
+| Plano | Indicado para | Inclui | Faixa sugerida |
+| --- | --- | --- | --- |
+| **Starter** | operação única | checklist + score + PDF + histórico | sob consulta |
+| **Pro** | operação com gestor aprovador | Starter + fluxo de aprovação + trilha de auditoria | sob consulta |
+| **Enterprise** | rede/unidades múltiplas | Pro + customizações + SLA de suporte | sob consulta |
+
+### Como contratar
+
+1. Abra uma issue em **Solicitar Demo**: [Abrir solicitação](https://github.com/fernando-msa/secpolicy-hama/issues/new?template=solicitar-demo.md&title=%5BDemo%5D%20SecPolicy%20para%20%5BNome%20da%20institui%C3%A7%C3%A3o%5D)
+2. Informe cenário atual (quantidade de unidades, equipe, dores).
+3. Receba proposta técnica-comercial com escopo e prazo de implantação.
+
+> Referência de discurso comercial e estrutura de proposta em `docs/oferta-comercial.md`.
+
+---
+
 ## ✨ Funcionalidades
 
 | Funcionalidade | Descrição |
-|---|---|
+| --- | --- |
 | 📋 **Checklist mensal** | 22 itens organizados em 5 categorias |
 | 🎯 **Criticidade por item** | Alta / Média / Baixa |
 | 📊 **Pontuação em tempo real** | Índice de conformidade calculado automaticamente |
@@ -55,12 +84,15 @@ A home agora funciona também como **landing/demo** do produto, com destaque par
 ### Screenshots
 
 #### Checklist mensal
+
 ![Checklist mensal](./docs/screenshots/checklist.svg)
 
 #### Score de conformidade
+
 ![Score de conformidade](./docs/screenshots/score.svg)
 
 #### Relatório PDF
+
 ![Prévia de PDF](./docs/screenshots/pdf.svg)
 
 ---
@@ -68,7 +100,7 @@ A home agora funciona também como **landing/demo** do produto, com destaque par
 ## 🛠️ Stack Tecnológica
 
 | Tecnologia | Uso |
-|---|---|
+| --- | --- |
 | **Next.js 14** | Framework React com App Router |
 | **TypeScript** | Tipagem estática |
 | **Tailwind CSS** | Estilização utilitária |
@@ -93,7 +125,7 @@ npm install
 npm run dev
 ```
 
-Acesse **http://localhost:3000**
+Acesse **[http://localhost:3000](http://localhost:3000)**
 
 > Configure as variáveis de ambiente do Firebase antes de rodar localmente:
 
@@ -129,7 +161,7 @@ vercel --prod
 
 ## 📁 Estrutura do Projeto
 
-```
+```text
 secpolicy-hama/
 ├── app/
 │   ├── layout.tsx            # Layout raiz com fontes
@@ -177,6 +209,15 @@ Os próximos passos já foram estruturados para abertura de issues em `docs/road
 
 ---
 
+## ✅ Maturidade de Produto
+
+- **MVP funcional disponível**: checklist -> score -> PDF -> histórico.
+- **Base para produção**: Next.js + TypeScript + Firestore.
+- **Roadmap público**: `docs/roadmap-issues.md`.
+- **Canal comercial no repositório**: issue template `Solicitar demo/proposta`.
+
+---
+
 ## 🚢 Release do fluxo mínimo
 
 Quando o fluxo mínimo estiver fechado (checklist → score → PDF + aprovação inicial), publique um release seguindo:
@@ -194,11 +235,7 @@ Distribuído sob a licença **MIT**. Veja [`LICENSE`](./LICENSE) para mais detal
 
 ---
 
-<div align="center">
-
 Desenvolvido por [Fernando S. De Santana Júnior](https://github.com/fernando-msa)  
 Analista de Infraestrutura · HAMA · Aracaju/SE
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/fernando-junior-1a74ab29b/)
-
-</div>

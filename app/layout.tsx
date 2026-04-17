@@ -15,8 +15,25 @@ const dmMono = DM_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'SecPolicy HAMA',
-  description: 'Gestão de políticas de segurança da informação — HAMA',
+  metadataBase: new URL('https://secpolicy-hama.vercel.app'),
+  title: {
+    default: 'SecPolicy HAMA',
+    template: '%s | SecPolicy HAMA',
+  },
+  description: 'Plataforma para checklist mensal, score de conformidade e relatório PDF de políticas de segurança da informação em instituições de saúde.',
+  openGraph: {
+    title: 'SecPolicy HAMA',
+    description: 'Checklist mensal, score em tempo real e relatório PDF para gestão de segurança da informação em saúde.',
+    type: 'website',
+    locale: 'pt_BR',
+    url: 'https://secpolicy-hama.vercel.app',
+    siteName: 'SecPolicy HAMA',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SecPolicy HAMA',
+    description: 'Plataforma de conformidade mensal em segurança da informação para hospitais e clínicas.',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
