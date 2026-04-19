@@ -73,6 +73,29 @@ A ferramenta substitui planilhas manuais por um fluxo estruturado: o analista pr
 
 ---
 
+## 🏗️ Arquitetura de Plataforma (compliance real)
+
+Para evoluir de "sistema de checklist" para **plataforma de compliance**, o produto passa a ser tratado como ciclo continuo de governanca, evidencia e resposta.
+
+### Componentes tecnicos (estado atual + direcao)
+
+| Camada | Papel na plataforma |
+| --- | --- |
+| **Ingestao de evidencias** | Coleta mensal via checklist e anexos por controle |
+| **Motor de conformidade** | Calcula score, criticidade e tendencia por periodo |
+| **Trilha de auditoria** | Mantem versoes, status e autoria por mudanca |
+| **Relatorios executivos** | Consolida visao tecnica e gerencial (PDF e exportacoes futuras) |
+| **Governanca operacional** | Fluxo de aprovacao, pendencias e responsabilidades |
+
+### Diferenciais de plataforma
+
+- **Evidencia versionada**: cada ciclo mensal gera artefatos auditaveis, nao apenas um status final.
+- **Rastreabilidade por controle**: historico por item, por unidade e por responsavel.
+- **Orientado a operacao**: rotina mensal com SLA, backlog de nao conformidades e plano de acao.
+- **Pronto para integracoes**: base para notificar, escalar e consolidar dados em outros sistemas.
+
+---
+
 ## 🖼️ Demo Visual (Landing + Fluxo)
 
 A home agora funciona também como **landing/demo** do produto, com destaque para:
@@ -200,21 +223,22 @@ Cada item contém:
 
 ## 🗺️ Próximos Passos
 
-Os próximos passos já foram estruturados para abertura de issues em `docs/roadmap-issues.md` e via template `.github/ISSUE_TEMPLATE/proximos-passos.md`.
+Os proximos passos ja foram estruturados para abertura de issues em `docs/roadmap-issues.md` e via template `.github/ISSUE_TEMPLATE/proximos-passos.md`.
 
-- [ ] Integração com **Resend** para envio de e-mail automático após submissão
-- [ ] Página `/gestao` para aprovação ou solicitação de ajustes pela chefia
-- [ ] Export para **Excel** além de PDF
-- [ ] Notificação automática no dia 1° de cada mês
+- [ ] Motor de compliance com score por dominio e tendencia mensal
+- [ ] Regra de SLA por pendencia critica e notificacao automatizada
+- [ ] Modulo de evidencias por controle (anexo, validade, responsavel)
+- [ ] Dashboard executivo com visao por unidade e risco recorrente
+- [ ] Integracoes (e-mail, ITSM, BI) para operacao de governanca
 
 ---
 
 ## ✅ Maturidade de Produto
 
-- **MVP funcional disponível**: checklist -> score -> PDF -> histórico.
-- **Base para produção**: Next.js + TypeScript + Firestore.
-- **Roadmap público**: `docs/roadmap-issues.md`.
-- **Canal comercial no repositório**: issue template `Solicitar demo/proposta`.
+- **MVP funcional disponivel**: checklist -> score -> PDF -> historico.
+- **Base para producao**: Next.js + TypeScript + Firestore.
+- **Roadmap de plataforma**: arquitetura, automacao e governanca em `docs/roadmap-issues.md`.
+- **Canal comercial consultivo**: issue template `Solicitar demo/proposta` com requisitos tecnicos.
 
 ---
 

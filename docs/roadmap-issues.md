@@ -1,10 +1,17 @@
 # Roadmap: próximos passos
 
-Para abrir rapidamente as issues no GitHub, use os títulos abaixo e o template `Próximo passo (roadmap)`.
+Para abrir rapidamente as issues no GitHub, use os titulos abaixo e o template `Proximo passo (roadmap)`.
 
-1. **[Roadmap] Integração com Resend para envio automático após submissão**
-2. **[Roadmap] Página /gestao para aprovação ou solicitação de ajustes**
-3. **[Roadmap] Exportar relatório para Excel além do PDF**
-4. **[Roadmap] Notificação automática no dia 1º de cada mês**
+Versao pronta (titulo, descricao, criterios e dependencias): `docs/roadmap-issues-prontas.md`.
+Versao curta para copiar e colar no GitHub: `docs/roadmap-issues-curtas.md`.
 
-> Sugestão: aplique as labels `roadmap`, `enhancement` e `fluxo-minimo`.
+1. **[Roadmap] Motor de conformidade por dominio com tendencia mensal**
+2. **[Roadmap] Modulo de evidencias por controle (anexo, validade, responsavel)**
+3. **[Roadmap] SLA e escalonamento de nao conformidades criticas**
+4. **[Roadmap] Fila de aprovacao multi-nivel (analista, gestor, comite)**
+5. **[Roadmap] Integracao de notificacoes (e-mail e eventos de workflow)**
+6. **[Roadmap] Dashboard executivo por unidade, risco e recorrencia**
+7. **[Roadmap] Export estruturado para BI/Excel e trilha de auditoria externa**
+8. **[Roadmap] Baseline de operacao: logs, monitoracao e alertas de disponibilidade**
+
+> Sugestao: aplique as labels `roadmap`, `enhancement`, `plataforma-compliance` e `governanca`.

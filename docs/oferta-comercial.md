@@ -4,35 +4,49 @@ Este documento consolida como posicionar e vender o SecPolicy HAMA como produto.
 
 ## 1. Proposta de valor
 
-O SecPolicy HAMA reduz o tempo operacional da conformidade mensal ao substituir planilhas por um fluxo digital com checklist, score e relatório PDF rastreável.
+O SecPolicy HAMA posiciona a conformidade como **operacao continua**. Em vez de apenas digitalizar checklist, a plataforma organiza governanca, evidencias, score de risco e trilha de auditoria em um fluxo unico.
 
 Resultado esperado:
 
 - mais previsibilidade para auditorias;
-- menor retrabalho de consolidação manual;
-- visão executiva mensal para tomada de decisão.
+- menor retrabalho de consolidacao manual;
+- visao executiva mensal para tomada de decisao;
+- capacidade de agir sobre nao conformidades com SLA e responsabilidade definida.
 
-## 2. Perfil ideal de cliente (ICP)
+## 2. Arquitetura de referencia para cliente
+
+Blocos de valor tecnico a apresentar na demo/proposta:
+
+- camada de coleta de evidencias por controle;
+- motor de conformidade (score por dominio, tendencia e criticidade);
+- trilha de auditoria (versao, autoria, aprovacao e historico);
+- modulo executivo (dashboards e relatorios para comite);
+- automacao de governanca (notificacoes, escalonamento e integracoes).
+
+Resultado: o cliente enxerga plataforma de compliance, nao apenas formulario web.
+
+## 3. Perfil ideal de cliente (ICP)
 
 - hospitais, maternidades e clínicas;
 - equipes de TI/infraestrutura de 2 a 15 pessoas;
 - organizações com exigência de governança e trilha de auditoria.
 
-## 3. Estrutura de oferta
+## 4. Estrutura de oferta
 
-- Licença mensal da plataforma (SaaS).
-- Setup inicial opcional (parametrização, treinamento, checklist base).
-- Serviços opcionais (customização, integrações, suporte estendido).
+- Licenca mensal da plataforma (SaaS).
+- Setup inicial opcional (parametrizacao, treinamento, checklist base).
+- Servicos opcionais (customizacao, integracoes, suporte estendido).
+- Plano de operacao de compliance (rituais mensais, papeis e indicadores).
 
-## 4. Pacotes sugeridos
+## 5. Pacotes sugeridos
 
 | Pacote | Escopo | Suporte |
 | --- | --- | --- |
-| Starter | checklist + score + PDF + histórico | horário comercial |
-| Pro | Starter + aprovação de gestão + auditoria detalhada | prioritário |
-| Enterprise | Pro + customizações + múltiplas unidades | SLA dedicado |
+| Starter | checklist + score + PDF + historico | horario comercial |
+| Pro | Starter + aprovacao de gestao + auditoria detalhada + SLA de pendencias | prioritario |
+| Enterprise | Pro + customizacoes + multiplas unidades + integracoes (ITSM/BI/e-mail) | SLA dedicado |
 
-## 5. Roteiro curto de venda (discovery)
+## 6. Roteiro curto de venda (discovery)
 
 Perguntas para qualificação:
 
@@ -40,15 +54,18 @@ Perguntas para qualificação:
 2. Quantas unidades/equipes participam do processo?
 3. Quanto tempo é gasto por mês para consolidar e aprovar?
 4. Existe exigência formal de auditoria interna/externa?
+5. Quais sistemas precisam integrar (service desk, BI, diretório, e-mail)?
+6. Quais controles exigem evidencia com validade e renovacao?
 
 Gancho de fechamento:
 
-- Mostrar um checklist real;
-- Gerar score na hora;
-- Exportar PDF executivo;
-- Definir cronograma de implantação (7 a 21 dias).
+- Mostrar checklist real por dominio;
+- Gerar score com leitura de risco;
+- Simular ciclo de pendencia critica com SLA;
+- Exportar relatorio executivo e plano de acao;
+- Definir cronograma de implantacao (7 a 21 dias).
 
-## 6. Proposta técnico-comercial (modelo)
+## 7. Proposta tecnico-comercial (modelo)
 
 Use esta estrutura:
 
@@ -57,10 +74,13 @@ Use esta estrutura:
 3. Entregáveis por fase (implantação, operação, evolução).
 4. Investimento e condições de suporte.
 5. Prazo, premissas e critérios de sucesso.
+6. Arquitetura alvo e plano de automacao (90 dias).
 
-## 7. Métricas de sucesso na adoção
+## 8. Metricas de sucesso na adocao
 
 - taxa de checklists entregues no prazo;
-- variação mensal do score de conformidade;
-- tempo médio para geração/aprovação de relatório;
-- número de não conformidades críticas recorrentes.
+- variacao mensal do score de conformidade;
+- tempo medio para geracao/aprovacao de relatorio;
+- numero de nao conformidades criticas recorrentes;
+- tempo medio de tratamento de pendencias por criticidade;
+- percentual de controles com evidencia valida no ciclo.
