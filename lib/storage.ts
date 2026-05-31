@@ -86,7 +86,7 @@ export async function ensureUser() {
     body: JSON.stringify({ returnSecureToken: true }),
   })
   const data = await res.json()
-  if (!res.ok) throw new Error(data.error?.message ?? 'Falha ao autenticar usuário anônimo.')
+  if (!res.ok) throw new Error('Falha ao autenticar usuário. Verifique a configuração do Firebase.')
 
   const auth = {
     uid: data.localId as string,
@@ -155,14 +155,17 @@ export async function getRegistros(): Promise<RegistroChecklist[]> {
 }
 
 export async function getRegistroPorId(id: string): Promise<RegistroChecklist | null> {
-  const { idToken } = await ensureUser()
+  if (!/^[a-zA-Z0-9_-]+$/.test(id)) return null
+  const { uid, idToken } = await ensureUser()
   const res = await fetch(endpoint(`registros/${id}`), {
     headers: { Authorization: `Bearer ${idToken}` },
   })
   if (res.status === 404) return null
   const data = await res.json()
   if (!res.ok) throw new Error('Falha ao buscar registro no Firestore.')
-  return mapRegistro(parseDoc(data))
+  const registro = mapRegistro(parseDoc(data))
+  if (registro.uid !== uid) return null
+  return registro
 }
 
 export async function salvarRegistro(registro: RegistroChecklist): Promise<RegistroChecklist> {
@@ -286,7 +289,10 @@ export function calcularConformidade(respostas: RespostaItem[], totalItens: numb
 }
 
 export function gerarId(): string {
-  return `policy_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`
+  const randomBytes = new Uint8Array(8)
+  crypto.getRandomValues(randomBytes)
+  const randomPart = Array.from(randomBytes).map(b => b.toString(36).padStart(2, '0')).join('').slice(0, 10)
+  return `policy_${Date.now()}_${randomPart}`
 }
 
 export const MESES = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']

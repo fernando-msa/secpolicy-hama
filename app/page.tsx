@@ -212,12 +212,14 @@ export default function Home() {
             value={instituicao}
             onChange={(e) => setInstituicao(e.target.value)}
             placeholder="Instituição"
+            maxLength={200}
             className={styles.input}
           />
           <input
             value={nomeContato}
             onChange={(e) => setNomeContato(e.target.value)}
             placeholder="Nome do contato"
+            maxLength={100}
             className={styles.input}
           />
           <input
@@ -225,12 +227,14 @@ export default function Home() {
             onChange={(e) => setEmailContato(e.target.value)}
             placeholder="E-mail"
             type="email"
+            maxLength={200}
             className={styles.input}
           />
           <input
             value={prazoImplantacao}
             onChange={(e) => setPrazoImplantacao(e.target.value)}
             placeholder="Prazo esperado (ex.: 30 dias)"
+            maxLength={50}
             className={styles.input}
           />
         </div>

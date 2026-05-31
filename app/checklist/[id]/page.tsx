@@ -120,7 +120,10 @@ export default function ChecklistPage() {
   }
 
   async function salvar(status: RegistroChecklist['status']) {
-    if (!analista.trim()) return alert('Informe o nome do analista.')
+    const nomeSanitizado = analista.trim()
+    if (!nomeSanitizado) return alert('Informe o nome do analista.')
+    if (nomeSanitizado.length > 100) return alert('Nome do analista deve ter no máximo 100 caracteres.')
+    setAnalista(nomeSanitizado)
     setSalvando(true)
     const reg = buildRegistro(status)
     await salvarRegistro(reg)
@@ -182,7 +185,7 @@ export default function ChecklistPage() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
             <div>
               <label style={{ fontSize: 12, color: 'var(--text-muted)', display: 'block', marginBottom: 6 }}>Analista</label>
-              <input value={analista} onChange={e => setAnalista(e.target.value)} placeholder="Seu nome" style={{ width: '100%', padding: '8px 12px', borderRadius: 'var(--radius)', background: 'var(--bg-subtle)', border: '1px solid var(--border-md)', color: 'var(--text)', fontFamily: 'var(--font-sans)', fontSize: 13, outline: 'none' }} />
+              <input value={analista} onChange={e => setAnalista(e.target.value)} placeholder="Seu nome" maxLength={100} style={{ width: '100%', padding: '8px 12px', borderRadius: 'var(--radius)', background: 'var(--bg-subtle)', border: '1px solid var(--border-md)', color: 'var(--text)', fontFamily: 'var(--font-sans)', fontSize: 13, outline: 'none' }} />
             </div>
             <div>
               <label style={{ fontSize: 12, color: 'var(--text-muted)', display: 'block', marginBottom: 6 }}>Mês</label>
