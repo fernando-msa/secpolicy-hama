@@ -136,3 +136,94 @@ describe('MESES', () => {
     expect(MESES[11]).toBe('Dezembro')
   })
 })
+
+describe('getRegistroPorId - sanitizacao e IDOR', () => {
+  beforeEach(() => {
+    vi.clearAllMocks()
+  })
+
+  it('rejeita IDs com caracteres invalidos', async () => {
+    const { getRegistroPorId } = await import('@/lib/storage')
+    expect(await getRegistroPorId('../admin')).toBeNull()
+    expect(await getRegistroPorId('<script>')).toBeNull()
+    expect(await getRegistroPorId('id with spaces')).toBeNull()
+    expect(await getRegistroPorId('id/slash')).toBeNull()
+  })
+
+  it('aceita IDs com caracteres validos', async () => {
+    const mockFetch = vi.fn()
+      // ensureUser call
+      .mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve({ localId: 'user-123', idToken: 'token', refreshToken: 'refresh' }),
+      })
+      // Firestore document call
+      .mockResolvedValueOnce({
+        status: 200,
+        ok: true,
+        json: () => Promise.resolve({
+          fields: {
+            uid: { stringValue: 'user-123' },
+            policyId: { stringValue: 'policy_test' },
+            version: { integerValue: '1' },
+            mes: { stringValue: '05' },
+            ano: { integerValue: '2026' },
+            dataPreenchimento: { stringValue: '2026-05-31' },
+            analista: { stringValue: 'Teste' },
+            respostas: { arrayValue: { values: [] } },
+            status: { stringValue: 'rascunho' },
+          },
+        }),
+      })
+    globalThis.fetch = mockFetch
+
+    const { getRegistroPorId } = await import('@/lib/storage')
+    const result = await getRegistroPorId('valid-id_123')
+    expect(result).not.toBeNull()
+    expect(result?.uid).toBe('user-123')
+  })
+
+  it('retorna null quando UID nao pertence ao usuario (IDOR)', async () => {
+    const mockFetch = vi.fn()
+      // ensureUser call
+      .mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve({ localId: 'user-123', idToken: 'token', refreshToken: 'refresh' }),
+      })
+      // Firestore document call - different UID
+      .mockResolvedValueOnce({
+        status: 200,
+        ok: true,
+        json: () => Promise.resolve({
+          fields: {
+            uid: { stringValue: 'other-user-456' },
+            policyId: { stringValue: 'policy_test' },
+            version: { integerValue: '1' },
+            mes: { stringValue: '05' },
+            ano: { integerValue: '2026' },
+            dataPreenchimento: { stringValue: '2026-05-31' },
+            analista: { stringValue: 'Outro' },
+            respostas: { arrayValue: { values: [] } },
+            status: { stringValue: 'rascunho' },
+          },
+        }),
+      })
+    globalThis.fetch = mockFetch
+
+    const { getRegistroPorId } = await import('@/lib/storage')
+    expect(await getRegistroPorId('some-doc-id')).toBeNull()
+  })
+
+  it('retorna null para 404', async () => {
+    const mockFetch = vi.fn()
+      .mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve({ localId: 'user-123', idToken: 'token', refreshToken: 'refresh' }),
+      })
+      .mockResolvedValueOnce({ status: 404 })
+    globalThis.fetch = mockFetch
+
+    const { getRegistroPorId } = await import('@/lib/storage')
+    expect(await getRegistroPorId('nonexistent-id')).toBeNull()
+  })
+})
