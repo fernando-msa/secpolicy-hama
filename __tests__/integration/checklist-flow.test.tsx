@@ -13,8 +13,8 @@ vi.mock('@/lib/firebase', () => ({
     appId: '1:123456:web:abc',
     measurementId: '',
   },
-  firebaseProjectId: 'test-project',
-  firebaseApiKey: 'test-api-key',
+  getFirebaseProjectId: () => 'test-project',
+  getFirebaseApiKey: () => 'test-api-key',
 }))
 
 // Mock fetch for Firestore REST API

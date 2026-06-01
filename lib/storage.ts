@@ -1,13 +1,18 @@
 'use client'
 
 import { RegistroChecklist, RespostaItem } from './types'
-import { firebaseApiKey, firebaseProjectId } from './firebase'
+import { getFirebaseApiKey, getFirebaseProjectId } from './firebase'
 
 const RASCUNHO_KEY = 'secpolicy_hama_rascunho'
 const AUTH_KEY = 'secpolicy_hama_auth'
 
-const apiKey = firebaseApiKey
-const projectId = firebaseProjectId
+function getApiKey(): string {
+  return getFirebaseApiKey()
+}
+
+function getProjectId(): string {
+  return getFirebaseProjectId()
+}
 
 interface AuthSession {
   uid: string
@@ -31,7 +36,7 @@ function saveAuth(auth: AuthSession) {
 }
 
 function endpoint(path: string): string {
-  return `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents/${path}`
+  return `https://firestore.googleapis.com/v1/projects/${getProjectId()}/databases/(default)/documents/${path}`
 }
 
 function toFsValue(value: unknown): Record<string, unknown> {
@@ -80,7 +85,7 @@ export async function ensureUser() {
   const cached = authFromStorage()
   if (cached) return { uid: cached.uid, idToken: cached.idToken }
 
-  const res = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`, {
+  const res = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${getApiKey()}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ returnSecureToken: true }),
